@@ -14,10 +14,13 @@ if (!isset($_SESSION['username'])) {
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <title></title>
   </head>
   <body>
       <p>Welcome to the website!</p>
-      <a href="logout.php">logout</a>
+      <a href="logout.php">
+      <button class="btn btn-danger" type="submit" name="but_logout">Logout</button>
+      </a>
   </body>
 </html>
