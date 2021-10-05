@@ -16,6 +16,17 @@ if (isset($_POST['but_regis'])) {
     $sql = "INSERT INTO login (username, password)
             VALUES ('$username', '$password')";
     $result = mysqli_query($koneksi, $sql);
+
+    $nama_mhs= $_POST['nama_mhs'];
+    $fakultas= $_POST['fakultas'];
+    $prodi=$_POST['prodi'];
+
+    $sql_data="INSERT INTO data (nama, fakultas, prodi)
+                                    VALUES ('$nama_mhs',
+                                    '$fakultas',
+                                    '$prodi')";
+    $simpan= mysqli_query($koneksi, $sql_data);
+
     if ($result) {
       echo "<script> alert('Suskes Registrasi. Silahkan login untuk melanjutkan.') </script>";
     }
@@ -38,8 +49,22 @@ if (isset($_POST['but_regis'])) {
       <div class="card-header bg-primary text-white text-center">
         Registrasi
       </div>
+
       <div class="card-body">
+
         <form class="" action="" method="post">
+          <div class="form-group">
+          <label for="nama_mhs">Nama</label>
+          <input id="nama_mhs" class="form-control"type="text" name="nama_mhs" placeholder="Masukan Nama" required>
+          </div>
+          <div class="form-group">
+          <label for="fakultas">Fakultas</label>
+          <input id="fakultas" class="form-control"type="text" name="fakultas" placeholder="Masukan Fakultas" required>
+          </div>
+          <div class="form-group">
+          <label for="prodi">Prodi</label>
+          <input id="prodi" class="form-control"type="text" name="prodi" placeholder="Masukan Prodi" required>
+          </div>
           <div class="form-group">
           <label for="username">Username</label>
           <input id="username" class="form-control"type="text" name="username" placeholder="Masukan Username" required>
@@ -51,6 +76,9 @@ if (isset($_POST['but_regis'])) {
           <button class="btn btn-success" type="submit" name="but_regis">Registrasi</button>
           <p>Sudah punya akun? <a href="login.php">Masuk disini</a></p>
         </form>
+
+
+      </div>
       </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
